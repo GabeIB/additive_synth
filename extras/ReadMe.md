@@ -5,7 +5,7 @@ EnvelopeSynth.py takes care of the implementation details of how control data is
 sample_resynthesis.py is a script that takes an audio file (in wav format) and generates control data for the additive synthesizer using a technique called oscillator bank resynthesis.
 
 synthTest.py is an example program which hopefully makes clear how one would use EnvelopeSynth.py to write their own programs for generating synth control data. For the sake of ease, I will include it below:
-
+'
 #make sure that EnvelopeSynth.py is in the same directory as your program
 import EnvelopeSynth
 
@@ -13,6 +13,7 @@ import EnvelopeSynth
 e = EnvelopeSynth.EnvelopeSynth()
 
 #then you must add partials. AddPartial takes frequency as an argument
+
 #remember that this is just the relative frequency, and the ratio between partials is most important
 e.addPartial(400)
 e.addPartial(600)
@@ -30,3 +31,4 @@ e.addPoint(2, 0.7, 0.5)
 #you must finally save your control data to a file.
 #you then must load that file in the synthesizer to use the preset.
 e.save("controlData.ctl")
+'
